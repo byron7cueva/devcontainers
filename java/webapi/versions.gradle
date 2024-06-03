@@ -1,0 +1,4 @@
+ext {
+    postgresVersion = '42.7.3'
+    querydslVersion = '5.1.0'
+}

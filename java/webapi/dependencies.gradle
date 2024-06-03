@@ -1,0 +1,13 @@
+dependencyManagement {
+    dependencies {
+        // Query dsl
+        dependencySet(group: 'com.querydsl', version: "${querydslVersion}", classifier: "jakarta") {
+            entry 'querydsl-jpa'
+            entry 'querydsl-core'
+            entry 'querydsl-apt'
+        }
+
+        // Postgres
+        dependency("org.postgresql:postgresql:${postgresVersion}")
+    }
+}

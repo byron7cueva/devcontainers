@@ -1,0 +1,11 @@
+apply plugin: "org.springframework.boot"
+tasks.bootJar { enabled = true }
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+jar {
+    enabled = false
+}

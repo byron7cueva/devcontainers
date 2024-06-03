@@ -1,0 +1,5 @@
+rootProject.name = 'webapi'
+include 'webapi-vo'
+include 'webapi-client'
+//include 'webapi-core'
+include 'webapi-service'

@@ -1,0 +1,52 @@
+apply from: "./versions.gradle"
+
+ext {
+	baseVersion = "1.0.0-SNAPSHOT"
+}
+
+buildscript {
+	ext.repos = {
+		mavenCentral()
+	}
+
+	repositories repos
+
+	apply from: "./plugins.gradle"
+
+	dependencies {
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}"
+		classpath "io.spring.gradle:dependency-management-plugin:${springDependencyManagementPluginVersion}"
+	}
+}
+
+subprojects {
+	apply plugin: "java"
+	apply plugin: "java-library"
+	apply plugin: "org.springframework.boot"
+	apply plugin: "maven-publish"
+	apply plugin: "io.spring.dependency-management"
+
+	tasks.bootJar { enabled = false }
+
+	compileJava {
+		options.encoding = 'UTF-8'
+		options.compilerArgs << '-parameters'
+		sourceCompatibility = JavaVersion.VERSION_17
+		targetCompatibility = JavaVersion.VERSION_17
+	}
+
+	compileTestJava {
+		options.encoding = 'UTF-8'
+	}
+
+	repositories repos
+
+	dependencyManagement {
+		apply from: project.rootDir.toString() + '/dependencies.gradle'
+	}
+}
+
+allprojects {
+	group = 'com.webapi'
+	version = "${baseVersion}"
+}

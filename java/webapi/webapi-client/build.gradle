@@ -1,0 +1,8 @@
+dependencies {
+    api project(":webapi-vo")
+
+    compileOnly 'org.projectlombok:lombok'
+    compileOnly 'com.querydsl:querydsl-core'
+    
+    implementation "com.querydsl:querydsl-jpa:${querydslVersion}:jakarta"
+}
