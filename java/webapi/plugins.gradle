@@ -1,4 +1,4 @@
 ext {
-    springBootGradlePluginVersion = '3.3.0'
+    springBootGradlePluginVersion = '3.3.1'
     springDependencyManagementPluginVersion = '1.1.5'
 }

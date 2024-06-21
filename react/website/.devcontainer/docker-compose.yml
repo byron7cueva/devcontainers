@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VARIANT=20-bullseye
+    
+    command: /bin/sh -c "while sleep 1000; do :; done" 
+
+    volumes:
+      - ..:/workspace:cached
+      - ${DEPENDENCIES_HOME}:/home/node/dependencies:cached

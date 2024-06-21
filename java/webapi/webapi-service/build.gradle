@@ -2,8 +2,16 @@ apply plugin: "org.springframework.boot"
 tasks.bootJar { enabled = true }
 
 dependencies {
+    api project(":webapi-vo")
+
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
+
+    // Web
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 }
 
 jar {

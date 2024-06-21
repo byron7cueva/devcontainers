@@ -16,7 +16,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     # Chromium for running Turbopack benchmarks
     chromium \
     # Used for plotters graph visualizations in turbopack benchmarks
-    libfontconfig1-dev
+    libfontconfig1-dev \
+    # Network util
+    inetutils-ping
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
@@ -28,5 +30,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Enable pnpm
 
 # pnpm store path
+# RUN pnpm config set store-dir /home/node/dependencies/.pnpm-store
 RUN corepack enable pnpm
-RUN pnpm config set store-dir /home/node/dependencies/.pnpm-store

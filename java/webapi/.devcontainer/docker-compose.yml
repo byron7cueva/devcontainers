@@ -1,7 +1,13 @@
 version: '3'
 
+networks:
+  devnet:
+    name: devnet
+    external: true
+
 services:
   webapi:
+    container_name: webapi
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,5 +20,8 @@ services:
       - ..:/workspace:cached
       - ${GRADLE_HOME}:/home/vscode/.gradle:cached
 
-    extra_hosts:
-      - "database:192.168.1.16"
+    networks:
+      - devnet
+
+    #extra_hosts:
+    #  - "database:192.168.1.16"
