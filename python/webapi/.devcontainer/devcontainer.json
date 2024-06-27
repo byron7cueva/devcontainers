@@ -1,0 +1,15 @@
+{
+    "name": "webapi-python",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "webapi-python",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                    "ms-azuretools.vscode-docker",
+					"ms-python.python"
+				]
+        }
+    }
+}

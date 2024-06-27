@@ -40,7 +40,15 @@
 		"vscjava.vscode-java-pack",
 		"vscjava.vscode-gradle",
 		"vmware.vscode-boot-dev-pack"
-	  ]
+	  ],
+	  "settings": {
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"java.format.enabled": true,
+		"java.format.settings.url": ".devcontainer/intellij-java-style.xml",
+		"[java]": {
+			"editor.defaultFormatter": "redhat.java"
+		}
+	  }
     }
   }
 
