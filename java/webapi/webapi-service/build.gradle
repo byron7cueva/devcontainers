@@ -12,6 +12,8 @@ dependencies {
     // Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.keycloak:keycloak-core'
+    implementation 'org.keycloak:keycloak-policy-enforcer'
 }
 
 jar {

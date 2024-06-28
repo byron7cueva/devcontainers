@@ -9,5 +9,11 @@ dependencyManagement {
 
         // Postgres
         dependency("org.postgresql:postgresql:${postgresVersion}")
+
+        // Keycloak
+        dependencySet(group: 'org.keycloak', version: "${keycloakVersion}") {
+            entry 'keycloak-core'
+            entry 'keycloak-policy-enforcer'
+        }
     }
 }

@@ -1,0 +1,8 @@
+{
+    "realm": "webapi.dev",
+    "auth-server-url": "http://keycloak:8080",
+    "resource": "webapibe",
+    "credentials": {
+      "secret": "9M2pfwj0qOp6EBaQgA5eSMYZWKCv3uEz"
+    }
+  }
