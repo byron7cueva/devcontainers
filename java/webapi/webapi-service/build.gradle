@@ -2,8 +2,9 @@ apply plugin: "org.springframework.boot"
 tasks.bootJar { enabled = true }
 
 dependencies {
-    api project(":webapi-vo")
-
+    api project(":webapi-dto")
+    api project(":webapi-core")
+    
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
 
     // Web
@@ -12,6 +13,14 @@ dependencies {
     // Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'jakarta.persistence:jakarta.persistence-api'
+
+    // Validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Keycloak
     implementation 'org.keycloak:keycloak-core'
     implementation 'org.keycloak:keycloak-policy-enforcer'
 }
