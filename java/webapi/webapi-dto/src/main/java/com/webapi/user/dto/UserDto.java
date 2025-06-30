@@ -1,16 +1,17 @@
 package com.webapi.user.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.webapi.common.dto.AuditableDto;
 
-@Data
-@Builder
-@AllArgsConstructor
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+
+@Getter
+@Setter
 @NoArgsConstructor
-public class UserDto {
+@SuperBuilder
+public class UserDto extends AuditableDto {
     private Long userId;
-    private String name;
-    private String email;
+    private String userName;
 }

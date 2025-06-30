@@ -39,9 +39,10 @@ spring:
 
   security:
     oauth2:
-      resource-server:
+      resourceserver:
         jwt:
           jwk-set-uri: http://keycloak:8080/realms/webapi.dev/protocol/openid-connect/certs
+          issuer-uri: http://keycloak:8080/realms/webapi.dev
 
 keycloak:
   policy-enforcer:
